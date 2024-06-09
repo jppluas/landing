@@ -1,10 +1,3 @@
-<!-- /*
-* Bootstrap 5
-* Template Name: Furni
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="author" content="Untree.co" />
+    <meta name="Juan Pablo Plúas Muñoz" content="Untree.co" />
     <link rel="shortcut icon" href="favicon.png" />
 
     <meta name="description" content="" />
@@ -27,10 +20,8 @@
     />
     <link href="css/tiny-slider.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-    <title>
-      Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites
-      by Untree.co
-    </title>
+    <title>Belleza Suprema</title>
+    <script src="js/main.js"></script>
   </head>
 
   <body>
@@ -57,13 +48,11 @@
         <div class="collapse navbar-collapse" id="navbarsFurni">
           <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="index.html">Inicio</a>
             </li>
-            <li><a class="nav-link" href="shop.html">Shop</a></li>
-            <li><a class="nav-link" href="about.html">About us</a></li>
-            <li><a class="nav-link" href="services.html">Services</a></li>
-            <li><a class="nav-link" href="blog.html">Blog</a></li>
-            <li><a class="nav-link" href="contact.html">Contact us</a></li>
+            <li><a class="nav-link" href="shop.html">Productos</a></li>
+            <li><a class="nav-link" href="services.html">Ofertas</a></li>
+            <li><a class="nav-link" href="contact.html">Contacto</a></li>
           </ul>
 
           <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
@@ -88,11 +77,10 @@
           <div class="col-lg-5">
             <div class="intro-excerpt">
               <h1>
-                Modern Interior <span clsas="d-block">Design Studio</span>
+                Bienvenidos a <span clsas="d-block">Belleza Suprema</span>
               </h1>
               <p class="mb-4">
-                Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet
-                velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
+                Tu tienda de productos de belleza de alta calidad.
               </p>
               <p>
                 <a href="" class="btn btn-secondary me-2">Shop Now</a
@@ -102,7 +90,10 @@
           </div>
           <div class="col-lg-7">
             <div class="hero-img-wrap">
-              <img src="images/couch.png" class="img-fluid" />
+              <img
+                src="https://www.professionalspa.ec/wp-content/uploads/2019/06/rostros_silueteado.png"
+                class="img-fluid"
+              />
             </div>
           </div>
         </div>
@@ -580,27 +571,81 @@
                 ><span>Subscribe to Newsletter</span>
               </h3>
 
-              <form action="#" class="row g-3">
+              <form class="row g-3" id="formulario">
                 <div class="col-auto">
                   <input
+                    
                     type="text"
+                    id="nombre"
+                    name="nombre"
                     class="form-control"
                     placeholder="Enter your name"
                   />
                 </div>
                 <div class="col-auto">
                   <input
+                    
                     type="email"
+                    id="email"
+                    name="email"
                     class="form-control"
                     placeholder="Enter your email"
                   />
                 </div>
                 <div class="col-auto">
-                  <button class="btn btn-primary">
+                  <button type="submit" class="btn btn-primary">
                     <span class="fa fa-paper-plane"></span>
                   </button>
                 </div>
               </form>
+
+              <script>
+                window.addEventListener("DOMContentLoaded", loaded);
+
+                constformulario = document.getElementById("formulario");
+                constformulario.addEventListener("submit", (event) => {
+                  event.preventDefault();
+
+                nombre = document.getElementById("nombre");
+                email = document.getElementById("email");
+
+                  if (nombre.value.length == 0) {
+                    alert("Nombre requerido")
+                    nombre.focus()
+                    return;
+                }
+
+                if (email.value.length == 0) {
+                    alert("Email requerido")
+                    email.focus()
+                    return;
+                }
+
+                constnombre = document.getElementById("nombre").value;
+                constemail = document.getElementById("email").value;
+                  
+                  constdatos = {
+                    nombre: constnombre,
+                    email: constemail,
+                  };
+
+                  fetch(
+                    "https://test-9356e-default-rtdb.firebaseio.com/datos.json",
+                    {
+                      method: "POST",
+                      body: JSON.stringify(constdatos),
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                    }
+                  )
+                    .then((respuesta) => respuesta.json())
+                    .then((datos) => {
+                      console.log(datos);
+                    })
+                    .catch((error) => console.error(error));
+                });
+              </script>
             </div>
           </div>
         </div>
@@ -702,5 +747,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/tiny-slider.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
