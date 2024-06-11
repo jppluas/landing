@@ -18,20 +18,27 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link href="css/tiny-slider.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <title>Belleza Suprema</title>
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js" defer></script>
   </head>
 
   <body>
+    <button onclick="topFunction()" id="scrollTop" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
     <!-- Start Header/Navigation -->
     <nav
       class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
       arial-label="Furni navigation bar"
     >
       <div class="container">
-        <a class="navbar-brand" href="index.html">Furni<span>.</span></a>
+        <a class="navbar-brand" href="index.html"
+          >Belleza Extrema<span>.</span></a
+        >
 
         <button
           class="navbar-toggler"
@@ -48,19 +55,19 @@
         <div class="collapse navbar-collapse" id="navbarsFurni">
           <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Inicio</a>
+              <a class="nav-link" href="#">Inicio</a>
             </li>
-            <li><a class="nav-link" href="shop.html">Productos</a></li>
-            <li><a class="nav-link" href="services.html">Ofertas</a></li>
-            <li><a class="nav-link" href="contact.html">Contacto</a></li>
+            <li><a class="nav-link" href="#productos">Productos</a></li>
+            <li><a class="nav-link" href="#testimonios">Testimonios</a></li>
+            <li><a class="nav-link" href="#footer">Contacto</a></li>
           </ul>
 
           <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
             <li>
-              <a class="nav-link" href="#"><img src="images/user.svg" /></a>
+              <a class="nav-link" onclick="userAlert()"><img src="images/user.svg" /></a>
             </li>
             <li>
-              <a class="nav-link" href="cart.html"
+              <a class="nav-link" onclick="shopAlert2()"
                 ><img src="images/cart.svg"
               /></a>
             </li>
@@ -74,56 +81,55 @@
     <div class="hero">
       <div class="container">
         <div class="row justify-content-between">
+          <div class="col-lg-7">
+            <div class="hero-img-wrap">
+              <img
+                src="https://content.app-sources.com/s/53118190821339987/uploads/Wellness/wellness-1675474.png?format=webp"
+                class="img-fluid"
+                style="height: 450px !important;"
+              />
+            </div>
+          </div>
           <div class="col-lg-5">
             <div class="intro-excerpt">
-              <h1>
-                Bienvenidos a <span clsas="d-block">Belleza Suprema</span>
-              </h1>
+              <h1>Bienvenidos</h1>
               <p class="mb-4">
                 Tu tienda de productos de belleza de alta calidad.
               </p>
               <p>
-                <a href="" class="btn btn-secondary me-2">Shop Now</a
-                ><a href="#" class="btn btn-white-outline">Explore</a>
+                <a onclick="shopAlert2()" class="btn btn-secondary me-2">Comprar ahora</a
+                ><a href="#productos" class="btn btn-white-outline">Explorar</a>
               </p>
             </div>
           </div>
-          <div class="col-lg-7">
-            <div class="hero-img-wrap">
-              <img
-                src="https://www.professionalspa.ec/wp-content/uploads/2019/06/rostros_silueteado.png"
-                class="img-fluid"
-              />
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
     <!-- End Hero Section -->
 
     <!-- Start Product Section -->
-    <div class="product-section">
+    <div id="productos" class="product-section">
       <div class="container">
         <div class="row">
           <!-- Start Column 1 -->
-          <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-            <h2 class="mb-4 section-title">Crafted with excellent material.</h2>
+          <div class="col-md-12 col-12 mb-5 mb-lg-0">
+            <h2 class="mb-4 section-title">Belleza al alcance de tus manos</h2>
             <p class="mb-4">
               Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet
               velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
             </p>
-            <p><a href="shop.html" class="btn">Explore</a></p>
           </div>
           <!-- End Column 1 -->
 
           <!-- Start Column 2 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-            <a class="product-item" href="cart.html">
+          <div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+            <a class="product-item" onclick="shopAlert()">
               <img
-                src="images/product-1.png"
+                src="https://sdcdn.io/mac/mx/mac_sku_MCMX40_1x1_0.png?width=1080&height=1080"
                 class="img-fluid product-thumbnail"
               />
-              <h3 class="product-title">Nordic Chair</h3>
+              <h3 class="product-title">Set de Maquillaje MAC</h3>
               <strong class="product-price">$50.00</strong>
 
               <span class="icon-cross">
@@ -134,13 +140,13 @@
           <!-- End Column 2 -->
 
           <!-- Start Column 3 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-            <a class="product-item" href="cart.html">
+          <div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+            <a class="product-item" onclick="shopAlert()">
               <img
-                src="images/product-2.png"
+                src="https://sdcdn.io/mac/mx/mac_sku_S23S01_1x1_0.png?width=1080&height=1080"
                 class="img-fluid product-thumbnail"
               />
-              <h3 class="product-title">Kruzo Aero Chair</h3>
+              <h3 class="product-title">Set de Maquillaje MAC</h3>
               <strong class="product-price">$78.00</strong>
 
               <span class="icon-cross">
@@ -151,13 +157,13 @@
           <!-- End Column 3 -->
 
           <!-- Start Column 4 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-            <a class="product-item" href="cart.html">
+          <div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+            <a class="product-item" onclick="shopAlert()">
               <img
-                src="images/product-3.png"
+                src="https://sdcdn.io/mac/mx/mac_sku_MCMX39_1x1_0.png?width=1080&height=1080"
                 class="img-fluid product-thumbnail"
               />
-              <h3 class="product-title">Ergonomic Chair</h3>
+              <h3 class="product-title">Set de Maquillaje MAC</h3>
               <strong class="product-price">$43.00</strong>
 
               <span class="icon-cross">
@@ -171,229 +177,24 @@
     </div>
     <!-- End Product Section -->
 
-    <!-- Start Why Choose Us Section -->
-    <div class="why-choose-section">
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-6">
-            <h2 class="section-title">Why Choose Us</h2>
-            <p>
-              Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet
-              velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
-            </p>
-
-            <div class="row my-5">
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img src="images/truck.svg" alt="Image" class="imf-fluid" />
-                  </div>
-                  <h3>Fast &amp; Free Shipping</h3>
-                  <p>
-                    Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-                    aliquet velit. Aliquam vulputate.
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img src="images/bag.svg" alt="Image" class="imf-fluid" />
-                  </div>
-                  <h3>Easy to Shop</h3>
-                  <p>
-                    Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-                    aliquet velit. Aliquam vulputate.
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img
-                      src="images/support.svg"
-                      alt="Image"
-                      class="imf-fluid"
-                    />
-                  </div>
-                  <h3>24/7 Support</h3>
-                  <p>
-                    Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-                    aliquet velit. Aliquam vulputate.
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img
-                      src="images/return.svg"
-                      alt="Image"
-                      class="imf-fluid"
-                    />
-                  </div>
-                  <h3>Hassle Free Returns</h3>
-                  <p>
-                    Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-                    aliquet velit. Aliquam vulputate.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-5">
-            <div class="img-wrap">
-              <img
-                src="images/why-choose-us-img.jpg"
-                alt="Image"
-                class="img-fluid"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Why Choose Us Section -->
-
-    <!-- Start We Help Section -->
-    <div class="we-help-section">
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-7 mb-5 mb-lg-0">
-            <div class="imgs-grid">
-              <div class="grid grid-1">
-                <img src="images/img-grid-1.jpg" alt="Untree.co" />
-              </div>
-              <div class="grid grid-2">
-                <img src="images/img-grid-2.jpg" alt="Untree.co" />
-              </div>
-              <div class="grid grid-3">
-                <img src="images/img-grid-3.jpg" alt="Untree.co" />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5 ps-lg-5">
-            <h2 class="section-title mb-4">
-              We Help You Make Modern Interior Design
-            </h2>
-            <p>
-              Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio
-              quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-              vulputate velit imperdiet dolor tempor tristique. Pellentesque
-              habitant morbi tristique senectus et netus et malesuada
-            </p>
-
-            <ul class="list-unstyled custom-list my-4">
-              <li>Donec vitae odio quis nisl dapibus malesuada</li>
-              <li>Donec vitae odio quis nisl dapibus malesuada</li>
-              <li>Donec vitae odio quis nisl dapibus malesuada</li>
-              <li>Donec vitae odio quis nisl dapibus malesuada</li>
-            </ul>
-            <p><a herf="#" class="btn">Explore</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End We Help Section -->
-
-    <!-- Start Popular Product -->
-    <div class="popular-product">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="product-item-sm d-flex">
-              <div class="thumbnail">
-                <img src="images/product-1.png" alt="Image" class="img-fluid" />
-              </div>
-              <div class="pt-3">
-                <h3>Nordic Chair</h3>
-                <p>
-                  Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-                  odio
-                </p>
-                <p><a href="#">Read More</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="product-item-sm d-flex">
-              <div class="thumbnail">
-                <img src="images/product-2.png" alt="Image" class="img-fluid" />
-              </div>
-              <div class="pt-3">
-                <h3>Kruzo Aero Chair</h3>
-                <p>
-                  Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-                  odio
-                </p>
-                <p><a href="#">Read More</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="product-item-sm d-flex">
-              <div class="thumbnail">
-                <img src="images/product-3.png" alt="Image" class="img-fluid" />
-              </div>
-              <div class="pt-3">
-                <h3>Ergonomic Chair</h3>
-                <p>
-                  Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-                  odio
-                </p>
-                <p><a href="#">Read More</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Popular Product -->
-
     <!-- Start Testimonial Slider -->
-    <div class="testimonial-section">
+    <div id="testimonios" class="testimonial-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-7 mx-auto text-center">
-            <h2 class="section-title">Testimonials</h2>
+            <h2 class="section-title">Clientes Felices</h2>
           </div>
         </div>
 
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <div class="testimonial-slider-wrap text-center">
-              <div id="testimonial-nav">
-                <span class="prev" data-controls="prev"
-                  ><span class="fa fa-chevron-left"></span
-                ></span>
-                <span class="next" data-controls="next"
-                  ><span class="fa fa-chevron-right"></span
-                ></span>
-              </div>
 
-              <div class="testimonial-slider">
+              <div class="testimonios">
                 <div class="item">
                   <div class="row justify-content-center">
                     <div class="col-lg-8 mx-auto">
                       <div class="testimonial-block text-center">
-                        <blockquote class="mb-5">
-                          <p>
-                            &ldquo;Donec facilisis quam ut purus rutrum
-                            lobortis. Donec vitae odio quis nisl dapibus
-                            malesuada. Nullam ac aliquet velit. Aliquam
-                            vulputate velit imperdiet dolor tempor tristique.
-                            Pellentesque habitant morbi tristique senectus et
-                            netus et malesuada fames ac turpis egestas. Integer
-                            convallis volutpat dui quis scelerisque.&rdquo;
-                          </p>
-                        </blockquote>
-
                         <div class="author-info">
                           <div class="author-pic">
                             <img
@@ -402,11 +203,21 @@
                               class="img-fluid"
                             />
                           </div>
-                          <h3 class="font-weight-bold">Maria Jones</h3>
-                          <span class="position d-block mb-3"
-                            >CEO, Co-Founder, XYZ Inc.</span
-                          >
+                          <h3 class="font-weight-bold">Laura G.</h3>
                         </div>
+                        <blockquote class="mb-5">
+                          <p>
+                            &ldquo;El set de sombras es simplemente perfecto.
+                            Los colores son muy pigmentados y se mezclan
+                            fácilmente, permitiéndome crear looks desde los más
+                            sutiles hasta los más dramáticos. Además, la
+                            presentación es muy elegante y práctica para llevar
+                            en el bolso. ¡Estoy más que satisfecha con mi
+                            compra!&rdquo;
+                          </p>
+                        </blockquote>
+
+                        
                       </div>
                     </div>
                   </div>
@@ -417,18 +228,6 @@
                   <div class="row justify-content-center">
                     <div class="col-lg-8 mx-auto">
                       <div class="testimonial-block text-center">
-                        <blockquote class="mb-5">
-                          <p>
-                            &ldquo;Donec facilisis quam ut purus rutrum
-                            lobortis. Donec vitae odio quis nisl dapibus
-                            malesuada. Nullam ac aliquet velit. Aliquam
-                            vulputate velit imperdiet dolor tempor tristique.
-                            Pellentesque habitant morbi tristique senectus et
-                            netus et malesuada fames ac turpis egestas. Integer
-                            convallis volutpat dui quis scelerisque.&rdquo;
-                          </p>
-                        </blockquote>
-
                         <div class="author-info">
                           <div class="author-pic">
                             <img
@@ -437,11 +236,21 @@
                               class="img-fluid"
                             />
                           </div>
-                          <h3 class="font-weight-bold">Maria Jones</h3>
-                          <span class="position d-block mb-3"
-                            >CEO, Co-Founder, XYZ Inc.</span
-                          >
+                          <h3 class="font-weight-bold">Marta R.</h3>
                         </div>
+
+                        <blockquote class="mb-5">
+                          <p>
+                            &ldquo;¡Estoy encantada con los productos de esta
+                            tienda! La base de maquillaje tiene una cobertura
+                            increíble y dura todo el día sin necesidad de
+                            retoques. Además, no obstruye mis poros y mi piel se
+                            siente fresca y natural. ¡Definitivamente he
+                            encontrado mi marca favorita!&rdquo;
+                          </p>
+                        </blockquote>
+
+                        
                       </div>
                     </div>
                   </div>
@@ -452,18 +261,6 @@
                   <div class="row justify-content-center">
                     <div class="col-lg-8 mx-auto">
                       <div class="testimonial-block text-center">
-                        <blockquote class="mb-5">
-                          <p>
-                            &ldquo;Donec facilisis quam ut purus rutrum
-                            lobortis. Donec vitae odio quis nisl dapibus
-                            malesuada. Nullam ac aliquet velit. Aliquam
-                            vulputate velit imperdiet dolor tempor tristique.
-                            Pellentesque habitant morbi tristique senectus et
-                            netus et malesuada fames ac turpis egestas. Integer
-                            convallis volutpat dui quis scelerisque.&rdquo;
-                          </p>
-                        </blockquote>
-
                         <div class="author-info">
                           <div class="author-pic">
                             <img
@@ -472,11 +269,20 @@
                               class="img-fluid"
                             />
                           </div>
-                          <h3 class="font-weight-bold">Maria Jones</h3>
-                          <span class="position d-block mb-3"
-                            >CEO, Co-Founder, XYZ Inc.</span
-                          >
+                          <h3 class="font-weight-bold">Daniela S.</h3>
                         </div>
+                        <blockquote class="mb-5">
+                          <p>
+                            &ldquo;Siempre he tenido problemas para encontrar un
+                            labial que no se corra y que mantenga su color
+                            vibrante durante horas. Desde que probé los labiales
+                            de esta marca, no he tenido que preocuparme más. Los
+                            colores son hermosos y duraderos, y la fórmula es
+                            súper hidratante. ¡Lo recomiendo al 100%!&rdquo;
+                          </p>
+                        </blockquote>
+
+                        
                       </div>
                     </div>
                   </div>
@@ -490,77 +296,29 @@
     </div>
     <!-- End Testimonial Slider -->
 
-    <!-- Start Blog Section -->
-    <div class="blog-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-6">
-            <h2 class="section-title">Recent Blog</h2>
-          </div>
-          <div class="col-md-6 text-start text-md-end">
-            <a href="#" class="more">View All Posts</a>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-            <div class="post-entry">
-              <a href="#" class="post-thumbnail"
-                ><img src="images/post-1.jpg" alt="Image" class="img-fluid"
-              /></a>
-              <div class="post-content-entry">
-                <h3><a href="#">First Time Home Owner Ideas</a></h3>
-                <div class="meta">
-                  <span>by <a href="#">Kristin Watson</a></span>
-                  <span>on <a href="#">Dec 19, 2021</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-            <div class="post-entry">
-              <a href="#" class="post-thumbnail"
-                ><img src="images/post-2.jpg" alt="Image" class="img-fluid"
-              /></a>
-              <div class="post-content-entry">
-                <h3><a href="#">How To Keep Your Furniture Clean</a></h3>
-                <div class="meta">
-                  <span>by <a href="#">Robert Fox</a></span>
-                  <span>on <a href="#">Dec 15, 2021</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-            <div class="post-entry">
-              <a href="#" class="post-thumbnail"
-                ><img src="images/post-3.jpg" alt="Image" class="img-fluid"
-              /></a>
-              <div class="post-content-entry">
-                <h3><a href="#">Small Space Furniture Apartment Ideas</a></h3>
-                <div class="meta">
-                  <span>by <a href="#">Kristin Watson</a></span>
-                  <span>on <a href="#">Dec 12, 2021</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Blog Section -->
-
     <!-- Start Footer Section -->
-    <footer class="footer-section">
+    <footer id="footer" class="footer-section">
       <div class="container relative">
         <div class="sofa-img">
-          <img src="images/sofa.png" alt="Image" class="img-fluid" />
+          <div id="resultados" class="blog-section">
+            <div class="container">
+              <div class="row">
+                <div class="p-3 p-lg-5 border bg-white">
+                  <table class="table site-block-order-table mb-5">
+                    <thead>
+                      <th>Intereses</th>
+                      <th>Conteo</th>
+                    </thead>
+                    <tbody id="tablebody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-8">
+        <div>
+          <div class="col-lg-6">
             <div class="subscription-form">
               <h3 class="d-flex align-items-center">
                 <span class="me-1"
@@ -568,29 +326,42 @@
                     src="images/envelope-outline.svg"
                     alt="Image"
                     class="img-fluid" /></span
-                ><span>Subscribe to Newsletter</span>
+                ><span>¡Háblanos un poco de ti!</span>
               </h3>
 
               <form class="row g-3" id="formulario">
                 <div class="col-auto">
                   <input
-                    
                     type="text"
                     id="nombre"
                     name="nombre"
                     class="form-control"
-                    placeholder="Enter your name"
+                    placeholder="Ingresa tu nombre"
                   />
                 </div>
                 <div class="col-auto">
                   <input
-                    
                     type="email"
                     id="email"
                     name="email"
                     class="form-control"
-                    placeholder="Enter your email"
+                    placeholder="Ingresa tu correo electrónico"
                   />
+                </div>
+                <div class="col-auto">
+                  <select
+                    class="form-select"
+                    name="intereses"
+                    id="intereses"
+                  >
+                    <option selected value="no_selected">
+                      Selecciona tus intereses
+                    </option>
+                    <option value="Cuidado de la piel">Cuidado de la piel</option>
+                    <option value="Maquillaje">Maquillaje</option>
+                    <option value="Cuidado del cabello">Cuidado del cabello</option>
+                    <option value="Fragancias">Fragancias</option>
+                  </select>
                 </div>
                 <div class="col-auto">
                   <button type="submit" class="btn btn-primary">
@@ -598,54 +369,6 @@
                   </button>
                 </div>
               </form>
-
-              <script>
-                window.addEventListener("DOMContentLoaded", loaded);
-
-                constformulario = document.getElementById("formulario");
-                constformulario.addEventListener("submit", (event) => {
-                  event.preventDefault();
-
-                nombre = document.getElementById("nombre");
-                email = document.getElementById("email");
-
-                  if (nombre.value.length == 0) {
-                    alert("Nombre requerido")
-                    nombre.focus()
-                    return;
-                }
-
-                if (email.value.length == 0) {
-                    alert("Email requerido")
-                    email.focus()
-                    return;
-                }
-
-                constnombre = document.getElementById("nombre").value;
-                constemail = document.getElementById("email").value;
-                  
-                  constdatos = {
-                    nombre: constnombre,
-                    email: constemail,
-                  };
-
-                  fetch(
-                    "https://test-9356e-default-rtdb.firebaseio.com/datos.json",
-                    {
-                      method: "POST",
-                      body: JSON.stringify(constdatos),
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                    }
-                  )
-                    .then((respuesta) => respuesta.json())
-                    .then((datos) => {
-                      console.log(datos);
-                    })
-                    .catch((error) => console.error(error));
-                });
-              </script>
             </div>
           </div>
         </div>
@@ -653,7 +376,7 @@
         <div class="row g-5 mb-5">
           <div class="col-lg-4">
             <div class="mb-4 footer-logo-wrap">
-              <a href="#" class="footer-logo">Furni<span>.</span></a>
+              <a href="#" class="footer-logo">Belleza Extrema<span>.</span></a>
             </div>
             <p class="mb-4">
               Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio
@@ -682,35 +405,12 @@
             <div class="row links-wrap">
               <div class="col-6 col-sm-6 col-md-3">
                 <ul class="list-unstyled">
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Contact us</a></li>
-                </ul>
-              </div>
-
-              <div class="col-6 col-sm-6 col-md-3">
-                <ul class="list-unstyled">
-                  <li><a href="#">Support</a></li>
-                  <li><a href="#">Knowledge base</a></li>
-                  <li><a href="#">Live chat</a></li>
-                </ul>
-              </div>
-
-              <div class="col-6 col-sm-6 col-md-3">
-                <ul class="list-unstyled">
-                  <li><a href="#">Jobs</a></li>
-                  <li><a href="#">Our team</a></li>
-                  <li><a href="#">Leadership</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                </ul>
-              </div>
-
-              <div class="col-6 col-sm-6 col-md-3">
-                <ul class="list-unstyled">
-                  <li><a href="#">Nordic Chair</a></li>
-                  <li><a href="#">Kruzo Aero</a></li>
-                  <li><a href="#">Ergonomic Chair</a></li>
+                  <li><a class="nav-link" href="#">Inicio</a></li>
+                  <li><a class="nav-link" href="#productos">Productos</a></li>
+                  <li>
+                    <a class="nav-link" href="#testimonios">Testimonios</a>
+                  </li>
+                  <li><a class="nav-link" href="#footer">Contacto</a></li>
                 </ul>
               </div>
             </div>
@@ -743,10 +443,9 @@
       </div>
     </footer>
     <!-- End Footer Section -->
-
+    
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/tiny-slider.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/main.js"></script>
   </body>
 </html>
